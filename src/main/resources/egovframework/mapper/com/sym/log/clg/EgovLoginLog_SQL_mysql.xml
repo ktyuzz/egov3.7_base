@@ -19,7 +19,7 @@
 
 	<!-- 로그인 로그 등록 -->
 	<insert id="logInsertLoginLog" parameterType="egovframework.com.sym.log.clg.service.LoginLog">
-		<![CDATA[
+		<![CDATA[ 
 			INSERT INTO COMTNLOGINLOG 
 				( LOG_ID
 				  , CONECT_MTHD
@@ -42,7 +42,7 @@
 	<!-- 로그인 로그 상세  조회 -->
 	<select id="selectLoginLog" parameterType="egovframework.com.sym.log.clg.service.LoginLog" resultMap="LoginLogVO">
 			
-			<![CDATA[
+			<![CDATA[ 
 			SELECT 
 				  a.LOG_ID
 				, a.CREAT_DT
@@ -63,7 +63,7 @@
 	<!-- 로그인 로그 목록  조회 -->
 	<select id="selectLoginLogInf" parameterType="egovframework.com.sym.log.clg.service.LoginLog" resultMap="LoginLogVO">
 			
-			<![CDATA[
+			<![CDATA[ 
 			SELECT 
 				  a.LOG_ID
 				, a.CREAT_DT
@@ -79,21 +79,21 @@
 				1 = 1
 			]]>
 			
-		<if test="searchWrd != null and searchWrd != ''">	<![CDATA[ AND
+		<if test="searchWrd != null and searchWrd != ''">	<![CDATA[  AND
 					a.CONECT_MTHD LIKE CONCAT ('%', #{searchWrd},'%') ]]>
 		</if>
-		<if test="searchBgnDe != null and searchBgnDe != ''">	<![CDATA[	AND
+		<if test="searchBgnDe != null and searchBgnDe != ''">	<![CDATA[ 	AND
 					a.CREAT_DT BETWEEN STR_TO_DATE(CONCAT(#{searchBgnDe},' 00:00:00'), '%Y-%m-%d %H:%i:%s') 
 														AND STR_TO_DATE(CONCAT(#{searchEndDe},' 23:59:59'), '%Y-%m-%d %H:%i:%s')) ]]>
 		</if>		
-			<![CDATA[	 ORDER BY a.CREAT_DT DESC ]]>
+			<![CDATA[ 	 ORDER BY a.CREAT_DT DESC ]]>
 		LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
 	</select>
 
 	<!-- 로그인 로그 총건수 -->
 	<select id="selectLoginLogInfCnt" parameterType="egovframework.com.sym.log.clg.service.LoginLog" resultType="java.lang.Integer">
 		 
-		 <![CDATA[
+		 <![CDATA[ 
 			SELECT COUNT(a.LOG_ID) as cnt
 			FROM
 				COMTNLOGINLOG a
@@ -103,10 +103,10 @@
 				1 = 1
 		]]>
 		
-		<if test="searchWrd != null and searchWrd != ''">	<![CDATA[	AND
+		<if test="searchWrd != null and searchWrd != ''">	<![CDATA[ 	AND
 					a.CONECT_MTHD LIKE CONCAT ('%', #{searchWrd},'%') ]]>
 		</if>
-		<if test="searchBgnDe != null and searchBgnDe != ''">	<![CDATA[	AND
+		<if test="searchBgnDe != null and searchBgnDe != ''">	<![CDATA[ 	AND
 					a.CREAT_DT BETWEEN STR_TO_DATE(CONCAT(#{searchBgnDe},' 00:00:00'), '%Y-%m-%d %H:%i:%s') 
 														AND STR_TO_DATE(CONCAT(#{searchEndDe},' 23:59:59'), '%Y-%m-%d %H:%i:%s')) ]]>
 		</if>

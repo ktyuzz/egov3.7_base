@@ -9,7 +9,7 @@
         <Logger name="java.sql" level="INFO" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
-        <Logger name="egovframework" level="DEBUG" additivity="false">
+        <Logger name="egovframework" level="INFO" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
 		  <!-- log SQL with timing information, post execution -->

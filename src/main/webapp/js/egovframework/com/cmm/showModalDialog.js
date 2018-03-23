@@ -6,7 +6,6 @@
  *    수정일      수정자     Version        Function 명
  * ------------    ---------   -------------  ----------------------------
  * 2014.09.25    Vincent Han       1.0             최초생성
- * 2016.09.09    장동한              1.1             mdattr 처리 개선
  *
  */
 // fix for deprecated method in Chrome 37
@@ -31,15 +30,7 @@ if (!window.showModalDialog) {
 		// get the modal specs
 		var mdattrs = arg3.split(";");
 		for (i = 0; i < mdattrs.length; i++) {
-			
-			/* 2016.09.09 modify by 장동한[mdattr 처리 개선] */
-			var mdattr = null;
-			
-			if(mdattrs[i].indexOf("=") > -1){
-				mdattr = mdattrs[i].split("=");
-			}else{
-				mdattr = mdattrs[i].split(":");	
-			}
+			var mdattr = mdattrs[i].split(":");
 
 			var n = mdattr[0];
 			var v = mdattr[1];

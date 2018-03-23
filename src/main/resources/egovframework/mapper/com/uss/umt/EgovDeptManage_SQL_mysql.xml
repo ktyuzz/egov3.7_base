@@ -18,7 +18,7 @@
             <if test="searchCondition == 1">AND
                 ORGNZT_NM LIKE CONCAT('%' , #{searchKeyword}, '%')
             </if>
-            <![CDATA[
+            <![CDATA[ 
             ORDER BY ORGNZT_ID DESC
             LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
             ]]>  

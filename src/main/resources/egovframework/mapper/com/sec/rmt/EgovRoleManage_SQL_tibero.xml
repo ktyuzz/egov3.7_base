@@ -51,7 +51,7 @@
             <if test="searchCondition == 1">AND
                 ROLE_NM LIKE '%'||#{searchKeyword}||'%'
             </if>
-            <![CDATA[        
+            <![CDATA[         
             ORDER BY ROLE_CREAT_DE DESC 
 
                     ) ALL_LIST

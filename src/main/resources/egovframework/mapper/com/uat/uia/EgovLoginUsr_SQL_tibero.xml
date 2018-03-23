@@ -273,7 +273,7 @@
 	<select id="selectLoginIncorrect" resultType="egovMap">
 	<!-- 일반회원 -->
 	<if test="userSe != null and userSe == 'GNR'">
-	<![CDATA[
+	<![CDATA[ 
 	SELECT  MBER_ID AS USER_ID
          ,  PASSWORD AS USER_PW
 	     ,  MBER_NM AS USER_NM
@@ -286,7 +286,7 @@
 	</if>
 	<!-- 기업회원 -->
 	<if test="userSe != null and userSe == 'ENT'">
-	<![CDATA[
+	<![CDATA[ 
 	SELECT  ENTRPRS_MBER_ID AS USER_ID
          ,  ENTRPRS_MBER_PASSWORD  AS USER_PW
 	     ,  CMPNY_NM AS USER_NM
@@ -299,7 +299,7 @@
 	</if>
 	<!-- 업무사용자 -->
 	<if test="userSe != null and userSe == 'USR'">
-	<![CDATA[
+	<![CDATA[ 
 	SELECT  EMPLYR_ID AS USER_ID
          ,  PASSWORD AS USER_PW
 	     ,  USER_NM AS USER_NM
@@ -316,7 +316,7 @@
 	<update id="updateLoginIncorrectGNR">
 		<!-- LOCK 해제 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'E')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNGNRLMBER
 			   SET  LOCK_AT = NULL
 			     ,  LOCK_CNT  = NULL
@@ -326,7 +326,7 @@
 		</if>
 		<!-- LOCK 설정 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'L')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNGNRLMBER
 			   SET  LOCK_AT = 'Y'
 			     ,  LOCK_CNT  = LOCK_CNT+1
@@ -336,7 +336,7 @@
 		</if>
 		<!-- LOCK 카운트 설정 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'C')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNGNRLMBER
 			   SET  LOCK_CNT  = NVL(LOCK_CNT,0)+1
 			     ,  LOCK_LAST_PNTTM = sysdate     
@@ -349,7 +349,7 @@
 	<update id="updateLoginIncorrectENT">
 		<!-- LOCK 해제 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'E')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNENTRPRSMBER
 			   SET  LOCK_AT = NULL
 			     ,  LOCK_CNT  = NULL
@@ -359,7 +359,7 @@
 		</if>
 		<!-- LOCK 설정 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'L')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNENTRPRSMBER
 			   SET  LOCK_AT = 'Y'
 			     ,  LOCK_CNT  = LOCK_CNT+1
@@ -369,7 +369,7 @@
 		</if>
 		<!-- LOCK 카운트 설정 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'C')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNENTRPRSMBER
 			   SET  LOCK_CNT  = NVL(LOCK_CNT,0)+1
 			     ,  LOCK_LAST_PNTTM = sysdate     
@@ -382,7 +382,7 @@
 	<update id="updateLoginIncorrectUSR">
 		<!-- LOCK 해제 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'E')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNEMPLYRINFO
 			   SET  LOCK_AT = NULL
 			     ,  LOCK_CNT  = NULL
@@ -392,7 +392,7 @@
 		</if>
 		<!-- LOCK 설정 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'L')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNEMPLYRINFO
 			   SET  LOCK_AT = 'Y'
 			     ,  LOCK_CNT  = LOCK_CNT+1
@@ -402,7 +402,7 @@
 		</if>
 		<!-- LOCK 카운트 설정 -->
 		<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(updateAt,'C')">
-			<![CDATA[
+			<![CDATA[ 
 			UPDATE  COMTNEMPLYRINFO
 			   SET  LOCK_CNT  = NVL(LOCK_CNT,0)+1
 			     ,  LOCK_LAST_PNTTM = sysdate     

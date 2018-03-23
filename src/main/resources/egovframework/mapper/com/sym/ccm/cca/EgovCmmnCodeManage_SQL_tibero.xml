@@ -9,7 +9,7 @@
 
 	<select id="selectCmmnCodeList" parameterType="egovframework.com.sym.ccm.cca.service.CmmnCodeVO" resultType="egovframework.com.sym.ccm.cca.service.CmmnCodeVO">
 		
-		<![CDATA[
+		<![CDATA[ 
 			SELECT  *
 			  FROM  (
 			SELECT ROWNUM RNUM, ALL_LIST.*
@@ -24,21 +24,21 @@
 			 WHERE  A.CL_CODE = B.CL_CODE
 			 ]]>
 		
-			<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(searchCondition,'1')">	<![CDATA[	AND
+			<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(searchCondition,'1')">	<![CDATA[ 	AND
 				A.CODE_ID LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(searchCondition,'2')">	<![CDATA[AND
+			<if test="@egovframework.com.cmm.util.EgovMybaitsUtil@isEquals(searchCondition,'2')">	<![CDATA[ AND
 				A.CODE_ID_NM LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="searchCondition == 'clCode'">	<![CDATA[	AND
+			<if test="searchCondition == 'clCode'">	<![CDATA[ 	AND
 				A.CL_CODE LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="searchCondition == 'clCode'">	<![CDATA[AND
+			<if test="searchCondition == 'clCode'">	<![CDATA[ AND
 				A.USE_AT = 'Y'	]]>
 			</if>
 		
 			/* 구현 Sql */
-			<![CDATA[
+			<![CDATA[ 
 				    ) ALL_LIST
 				    )
 			 WHERE  RNUM  > #{firstIndex}
@@ -49,24 +49,24 @@
 
 	<select id="selectCmmnCodeListTotCnt" parameterType="egovframework.com.sym.ccm.cca.service.CmmnCodeVO" resultType="int">
 		
-		<![CDATA[
+		<![CDATA[ 
 			SELECT  COUNT(*) totcnt
 			  FROM  COMTCCMMNCODE   A
 			     ,  COMTCCMMNCLCODE B
 			 WHERE  A.CL_CODE = B.CL_CODE
 			 ]]>
 		
-			<if test="searchCondition == 1">	<![CDATA[	AND
+			<if test="searchCondition == 1">	<![CDATA[ 	AND
 				CODE_ID LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="searchCondition == 2">	<![CDATA[	AND
+			<if test="searchCondition == 2">	<![CDATA[ 	AND
 				CODE_ID_NM LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
 	</select>
 
 	<select id="selectCmmnCodeDetail" parameterType="egovframework.com.sym.ccm.cca.service.CmmnCodeVO" resultType="egovframework.com.sym.ccm.cca.service.CmmnCodeVO">
 		
-		<![CDATA[
+		<![CDATA[ 
             SELECT  B.CL_CODE_NM clCodeNm
                  ,  A.CL_CODE    clCode
                  ,  A.CODE_ID    codeId
@@ -83,7 +83,7 @@
 
 	<insert id="insertCmmnCode">
 		
-		<![CDATA[
+		<![CDATA[ 
 		    INSERT
 		      INTO  COMTCCMMNCODE
 		         (  CODE_ID
@@ -113,7 +113,7 @@
 
 	<update id="updateCmmnCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             UPDATE  COMTCCMMNCODE
                SET  CODE_ID_NM        = #{codeIdNm}
                  ,  CODE_ID_DC        = #{codeIdDc}
@@ -127,7 +127,7 @@
 
 	<delete id="deleteCmmnCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             UPDATE  COMTCCMMNCODE
                SET  USE_AT  = 'N'
              WHERE  CODE_ID = #{codeId}

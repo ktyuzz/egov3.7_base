@@ -37,7 +37,7 @@ SELECT * FROM ( SELECT rownum rn, TB.* FROM (
              MBER_NM LIKE '%' ||#{searchKeyword}|| '%'
         </if>
         </if>
-         <![CDATA[
+         <![CDATA[ 
         ORDER BY 12 DESC
         ) TB ) Z WHERE rn BETWEEN #{firstIndex} + 1 AND #{firstIndex} + #{recordCountPerPage}
         ]]>

@@ -48,7 +48,7 @@
 				<if test="searchCondition == 3">AND
 					sndr LIKE '%' || #{searchKeyword} || '%'
 				</if>
-		<![CDATA[
+		<![CDATA[ 
 				 ORDER BY mssage_id DESC
 		  ) dtls	
 		 WHERE 1 = 1	 

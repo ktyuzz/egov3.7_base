@@ -15,7 +15,7 @@
 
 	<!-- 마이페이지 콘텐츠 목록 -->
     <select id="selectIndvdlPgeList" parameterType="egovframework.com.uss.mpe.service.IndvdlPgeVO" resultMap="indvdlPgeMap">
-<![CDATA[
+<![CDATA[ 
             SELECT CNTNTS_ID, CNTNTS_NM, CNTC_URL, CNTNTS_USE_AT, CNTNTS_LINK_URL, CNTNTS_DC 
             FROM COMTNINDVDLPGECNTNTS
             WHERE 1=1 AND ROWNUM  > #{firstIndex} AND  ROWNUM <= #{firstIndex} + #{recordCountPerPage} 

@@ -57,7 +57,7 @@
                        org.springframework.validation.Errors"
 
 			depends="" msg="errors.password1">
-			<javascript><![CDATA[
+			<javascript><![CDATA[ 
            function validatePassword1(form) {
                 var bValid = true;
                 var focusField = null;
@@ -107,7 +107,7 @@
                        org.springframework.validation.Errors"
 
 			depends="" msg="errors.password2">
-			<javascript><![CDATA[
+			<javascript><![CDATA[ 
            function validatePassword2(form) {
                 var bValid = true;
                 var focusField = null;
@@ -157,7 +157,7 @@
                        org.springframework.validation.Errors"
 
 			depends="" msg="errors.password3">
-			<javascript><![CDATA[
+			<javascript><![CDATA[ 
            function validatePassword3(form) {
                 var bValid = true;
                 var focusField = null;
@@ -224,7 +224,7 @@
                        org.springframework.validation.Errors"
 
 			depends="" msg="errors.password4">
-			<javascript><![CDATA[
+			<javascript><![CDATA[ 
            function validatePassword4(form) {
                 var bValid = true;
                 var focusField = null;
@@ -289,7 +289,7 @@
                        org.apache.commons.validator.Field,
                        org.springframework.validation.Errors"
 			msg="errors.minInteger">
-			<javascript><![CDATA[
+			<javascript><![CDATA[ 
           function validateMinInteger(form){
                var bValid = true;
                 var focusField = null;
@@ -359,7 +359,7 @@
                        org.apache.commons.validator.Field,
                        org.springframework.validation.Errors"
 			msg="errors.english">
-			<javascript><![CDATA[
+			<javascript><![CDATA[ 
           function validateEnglish(form){
                 var bValid = true;
                 var focusField = null;

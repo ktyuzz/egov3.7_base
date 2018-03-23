@@ -21,7 +21,7 @@
 	<!-- 개인정보조회 로그 등록 -->
 	<insert id="insertPrivacyLog" parameterType="egovframework.com.sym.log.plg.service.PrivacyLog">
 		
-		<![CDATA[
+		<![CDATA[ 
 			INSERT INTO COMTNPRIVACYLOG 
 				( REQUST_ID
 				  , INQIRE_DT
@@ -42,7 +42,7 @@
 	<!-- 개인정보조회 로그 상세 조회 -->
 	<select id="selectPrivacyLog" parameterType="egovframework.com.sym.log.plg.service.PrivacyLog" resultMap="privacyLogMapping">
 			
-			<![CDATA[
+			<![CDATA[ 
 			SELECT 
 				  a.REQUST_ID
 				, a.INQIRE_DT
@@ -64,7 +64,7 @@
 	<!-- 개인정보조회 로그 목록 조회 -->
 	<select id="selectPrivacyLogList" parameterType="egovframework.com.sym.log.plg.service.PrivacyLog" resultMap="privacyLogMapping">
 		
-		<![CDATA[
+		<![CDATA[ 
 		SELECT * FROM ( SELECT rownum rn, TB.* FROM (		
 			SELECT 
 				  a.REQUST_ID
@@ -82,15 +82,15 @@
 				1 = 1
 				]]>
 				
-			<if test="searchWord != null and searchWord != ''">	<![CDATA[	AND
+			<if test="searchWord != null and searchWord != ''">	<![CDATA[ 	AND
 					a.INQIRE_INFO LIKE '%' || #{searchWord} || '%' 	]]>
 			</if>
-			<if test="searchBeginDate != null and searchBeginDate != ''">	<![CDATA[	AND
+			<if test="searchBeginDate != null and searchBeginDate != ''">	<![CDATA[ 	AND
 					a.INQIRE_DT BETWEEN TO_DATETIME(#{searchBeginDate} || ' 00:00:00', 'YYYY-MM-DD HH24:MI:SS') 
 														AND TO_DATETIME(#{searchEndDate} || ' 23:59:59', 'YYYY-MM-DD HH24:MI:SS') ]]>
 			</if>		
 				 
-				 <![CDATA[
+				 <![CDATA[ 
 				ORDER BY a.INQIRE_DT DESC
 			) TB ) WHERE rn BETWEEN #{firstIndex} + 1 AND #{firstIndex} + #{recordCountPerPage}
 			]]>
@@ -100,7 +100,7 @@
 	<!-- 개인정보조회 로그 총건수 -->
 	<select id="selectPrivacyLogListCount" parameterType="egovframework.com.sym.log.plg.service.PrivacyLog" resultType="java.lang.Integer">
 		 
-		 <![CDATA[
+		 <![CDATA[ 
 			SELECT COUNT(a.REQUST_ID) as cnt
 			FROM
 				COMTNPRIVACYLOG a
@@ -110,10 +110,10 @@
 				1 = 1
 				]]>
 				
-			<if test="searchWord != null and searchWord != ''">	<![CDATA[	AND
+			<if test="searchWord != null and searchWord != ''">	<![CDATA[ 	AND
 					a.INQIRE_INFO LIKE '%' || #{searchWord} || '%' 	]]>
 			</if>
-			<if test="searchBeginDate != null and searchBeginDate != ''">	<![CDATA[	AND
+			<if test="searchBeginDate != null and searchBeginDate != ''">	<![CDATA[ 	AND
 					a.INQIRE_DT BETWEEN TO_DATETIME(#{searchBeginDate} || ' 00:00:00', 'YYYY-MM-DD HH24:MI:SS') 
 														AND TO_DATETIME(#{searchEndDate} || ' 23:59:59', 'YYYY-MM-DD HH24:MI:SS')		]]>
 			</if>			

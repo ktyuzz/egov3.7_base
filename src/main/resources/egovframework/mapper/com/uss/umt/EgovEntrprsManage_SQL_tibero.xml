@@ -162,7 +162,7 @@
     </select>
     
     <select id="selectEntrprsMberList" resultType="egovMap">
-     <![CDATA[
+     <![CDATA[ 
         SELECT * FROM ( SELECT rownum rn, TB.* FROM (
             SELECT 
                 ESNTL_ID               as "uniqId",
@@ -192,7 +192,7 @@
             AND APPLCNT_NM LIKE '%' ||#{searchKeyword}|| '%'
         </if>
         </if>
-        <![CDATA[
+        <![CDATA[ 
         ORDER BY 13 DESC
         ) TB ) WHERE rn BETWEEN #{firstIndex} + 1 AND #{firstIndex} + #{recordCountPerPage}
 	 ]]>

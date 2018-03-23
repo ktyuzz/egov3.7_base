@@ -9,7 +9,7 @@
 
 	<select id="selectCmmnClCodeList" parameterType="egovframework.com.sym.ccm.ccc.service.CmmnClCodeVO" resultType="egovframework.com.sym.ccm.ccc.service.CmmnClCode">
 		
-		<![CDATA[
+		<![CDATA[ 
 			SELECT  *
 			  FROM  (
 			SELECT ROWNUM RNUM, ALL_LIST.*
@@ -22,17 +22,17 @@
 			 WHERE  1 = 1
 			 ]]>
 		
-			<if test="searchCondition == 1">	<![CDATA[	AND
+			<if test="searchCondition == 1">	<![CDATA[ 	AND
 				CL_CODE LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="searchCondition == 2">	<![CDATA[	AND
+			<if test="searchCondition == 2">	<![CDATA[ 	AND
 				CL_CODE_NM LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="searchCondition == 3">	<![CDATA[	AND	]]>
+			<if test="searchCondition == 3">	<![CDATA[ 	AND	]]>
 				USE_AT        = 'Y'
 			</if>
 			
-			<![CDATA[
+			<![CDATA[ 
 			/* 구현 Sql */
 				    ) ALL_LIST
 				    )
@@ -44,23 +44,23 @@
 
 	<select id="selectCmmnClCodeListTotCnt" parameterType="egovframework.com.sym.ccm.ccc.service.CmmnClCodeVO" resultType="int">
 		
-		<![CDATA[
+		<![CDATA[ 
 			SELECT  COUNT(*) totcnt
 			  FROM  COMTCCMMNCLCODE
 			 WHERE  1 = 1
 		
 		]]>
-			<if test="searchCondition == 1">	<![CDATA[	AND
+			<if test="searchCondition == 1">	<![CDATA[ 	AND
 				CL_CODE LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
-			<if test="searchCondition == 2">	<![CDATA[	AND
+			<if test="searchCondition == 2">	<![CDATA[ 	AND
 				CL_CODE_NM LIKE '%' || #{searchKeyword} || '%'	]]>
 			</if>
 	</select>
 
 	<select id="selectCmmnClCodeDetail" parameterType="egovframework.com.sym.ccm.ccc.service.CmmnClCodeVO" resultType="egovframework.com.sym.ccm.ccc.service.CmmnClCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             SELECT  CL_CODE    clCode
 			     ,  CL_CODE_NM clCodeNm
                  ,  CL_CODE_DC clCodeDc
@@ -73,7 +73,7 @@
 
 	<insert id="insertCmmnClCode">
 		
-		<![CDATA[
+		<![CDATA[ 
 		    INSERT
 		      INTO  COMTCCMMNCLCODE
 		         (  CL_CODE
@@ -101,7 +101,7 @@
 
 	<update id="updateCmmnClCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             UPDATE  COMTCCMMNCLCODE
                SET  CL_CODE_NM        = #{clCodeNm}
                  ,  CL_CODE_DC        = #{clCodeDc}
@@ -115,7 +115,7 @@
 
 	<delete id="deleteCmmnClCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             UPDATE  COMTCCMMNCLCODE
                SET  USE_AT  = 'N'
              WHERE  CL_CODE = #{clCode}

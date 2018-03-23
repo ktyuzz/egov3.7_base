@@ -57,7 +57,7 @@
                        A.GROUP_ID = #{searchKeyword}
                 </if>
             </if>
-             <![CDATA[
+             <![CDATA[ 
                     ) ALL_LIST
                     )
              WHERE  RNUM  > #{firstIndex}

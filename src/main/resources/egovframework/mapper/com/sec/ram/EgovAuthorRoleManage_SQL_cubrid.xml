@@ -16,7 +16,7 @@
     </resultMap>
 
     <select id="selectAuthorRoleList" parameterType="egovframework.com.sec.ram.service.AuthorRoleManageVO" resultMap="authorRole">
-<![CDATA[  
+<![CDATA[   
 
             SELECT  * 
               FROM  (

@@ -11,5 +11,5 @@
 		<property name="mapClass" value="egovframework.com.sym.ccm.zip.service.impl.EgovCcmExcelRdnmadZipMapping" />
 		<property name="sqlSessionTemplate" ref="egov.sqlSessionTemplate" />
 	</bean>
-
+	
 </beans>

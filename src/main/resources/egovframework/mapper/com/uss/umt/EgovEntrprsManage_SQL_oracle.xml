@@ -191,7 +191,7 @@
             AND APPLCNT_NM LIKE '%' ||#{searchKeyword}|| '%'
         </if>
         </if>
-        <![CDATA[
+        <![CDATA[ 
         ORDER BY 13 DESC
         ) TB ) WHERE rn BETWEEN #{firstIndex} + 1 AND #{firstIndex} + #{recordCountPerPage}
         ]]>

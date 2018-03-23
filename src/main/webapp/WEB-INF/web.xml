@@ -12,16 +12,16 @@
     
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
-        <welcome-file>egovDevIndex.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
     <login-config>
         <auth-method>BASIC</auth-method>
     </login-config>
 
-    <session-config>
-        <session-timeout>600</session-timeout>
-    </session-config>
+	<session-config>
+		<session-timeout>1440</session-timeout><!-- 분단위, 1440분 == 24시간 * 60분 -->
+	</session-config>
 
     <error-page>
       <error-code>404</error-code>

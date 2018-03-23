@@ -9,7 +9,7 @@
 
 	<select id="selectCmmnDetailCodeList" parameterType="egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO"  resultType="egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO">
 		
-		<![CDATA[
+		<![CDATA[ 
 			SELECT  A.CODE_ID
 			     ,  A.CODE
 			     ,  A.CODE_NM
@@ -20,13 +20,13 @@
 			   AND  A.CODE_ID = B.CODE_ID
 		]]>	   
 		
-			<if test="searchCondition == 1">	<![CDATA[	AND
+			<if test="searchCondition == 1">	<![CDATA[ 	AND
 				A.CODE_ID LIKE CONCAT ('%', #{searchKeyword},'%')	]]>
 			</if>
-			<if test="searchCondition == 2">	<![CDATA[	AND
+			<if test="searchCondition == 2">	<![CDATA[ 	AND
 				A.CODE    LIKE CONCAT ('%', #{searchKeyword},'%')	]]>
 			</if>
-			<if test="searchCondition == 3">	<![CDATA[	AND
+			<if test="searchCondition == 3">	<![CDATA[ 	AND
 				A.CODE_NM LIKE CONCAT ('%', #{searchKeyword},'%')	]]>
 			</if>
 			 LIMIT  #{recordCountPerPage} OFFSET #{firstIndex}
@@ -34,7 +34,7 @@
 
 	<select id="selectCmmnDetailCodeListTotCnt" parameterType="egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO" resultType="int">
 		
-		<![CDATA[
+		<![CDATA[ 
 			SELECT  COUNT(*) totcnt
 			  FROM  COMTCCMMNDETAILCODE A
 			     ,  COMTCCMMNCODE       B
@@ -42,13 +42,13 @@
 			   AND  A.CODE_ID = B.CODE_ID
 		]]>	   
 		
-			<if test="searchCondition == 1">	<![CDATA[	AND
+			<if test="searchCondition == 1">	<![CDATA[ 	AND
 				A.CODE_ID LIKE CONCAT ('%', #{searchKeyword},'%')	]]>
 			</if>
-			<if test="searchCondition == 2">	<![CDATA[	AND
+			<if test="searchCondition == 2">	<![CDATA[ 	AND
 				A.CODE    LIKE CONCAT ('%', #{searchKeyword},'%')	]]>
 			</if>
-			<if test="searchCondition == 3">	<![CDATA[	AND
+			<if test="searchCondition == 3">	<![CDATA[ 	AND
 				A.CODE_NM LIKE CONCAT ('%', #{searchKeyword},'%')	]]>
 			</if>
 			
@@ -56,7 +56,7 @@
 
 	<select id="selectCmmnDetailCodeDetail" parameterType="egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO" resultType="egovframework.com.sym.ccm.cde.service.CmmnDetailCodeVO">
 		
-		<![CDATA[
+		<![CDATA[ 
             SELECT  A.CODE_ID    codeId
                  ,  B.CODE_ID_NM codeIdNm
                  ,  A.CODE       code
@@ -75,7 +75,7 @@
 
 	<insert id="insertCmmnDetailCode">
 		
-		<![CDATA[
+		<![CDATA[ 
 		    INSERT
 		      INTO  COMTCCMMNDETAILCODE
 		         (  CODE_ID
@@ -105,7 +105,7 @@
 
 	<update id="updateCmmnDetailCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             UPDATE  COMTCCMMNDETAILCODE
                SET  CODE_NM           = #{codeNm}
                  ,  CODE_DC           = #{codeDc}
@@ -120,7 +120,7 @@
 
 	<delete id="deleteCmmnDetailCode">
 		
-		<![CDATA[
+		<![CDATA[ 
             UPDATE  COMTCCMMNDETAILCODE
                SET  USE_AT    = 'N'
              WHERE  CODE_ID   = #{codeId}
